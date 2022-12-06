@@ -30,6 +30,7 @@ light.position.set(-4.7, 6, 1)
 scene.add(light);
 
 //model
+let model = 0;
 
 let earth;
 const loader = new GLTFLoader()
@@ -40,9 +41,9 @@ loader.load(
         earth.scale.set(0.7, 0.7, 0.7);
         earth.position.set(-176.33906187483, 2.0253736833543522e-14, 279.8435596840632)
         scene.add(earth)
+        model++
     }
 )
-
 let mercury;
 const loader1 = new GLTFLoader()
 loader1.load(
@@ -53,6 +54,7 @@ loader1.load(
         mercury.position.set(1734.97, 80, -3000)
         // mercury.position.set(-280, 0, -150)
         scene.add(mercury)
+        model++
     }
 )
 
@@ -66,6 +68,7 @@ loader2.load(
         jupiter.position.set(1734.97, 80, -3000)
         // jupiter.position.set(290.64251966882324, 2.0970767684172966e-14, 181.15886770916433)
         scene.add(jupiter)
+        model++
     }
 )
 
@@ -75,10 +78,11 @@ loader3.load(
     './ASSETS/MODELS/uranus.glb',
     (gltf) => {
         uranus = gltf.scene;
-        uranus.scale.set(1.5,1.5,1.5);
+        uranus.scale.set(1.5, 1.5, 1.5);
         uranus.position.set(1734.97, 80, -3000)
         // uranus.position.set(159.62891363424632,1.9241049991866458e-14,-270.66441216779685)
         scene.add(uranus)
+        model++
     }
 )
 
@@ -92,6 +96,7 @@ loader4.load(
         mars.position.set(357.67697560529547, 80, 221.1165034816064)
         // mars.position.set(78.46440881248945, 2.2441813665976374e-14, 358.0049087824055)
         scene.add(mars)
+        model++
     }
 )
 
@@ -106,6 +111,7 @@ loader5.load(
         saturn.position.set(1734.97, 80, -3000)
         // saturn.position.set(333.3806450782728, 2.1319722982677394e-14, -100.42368385461722);
         scene.add(saturn)
+        model++
     }
 )
 
@@ -119,6 +125,7 @@ loader6.load(
         venus.position.set(-348.4108236994611, 80, -195.4347858944525)
         // venus.position.set(-322.0227683689151, 2.0253736833543563e-14, 75.55937593418506);
         scene.add(venus)
+        model++
     }
 )
 
@@ -132,6 +139,7 @@ loader7.load(
         neptune.position.set(1734.97, 80, -3000)
         // neptune.position.set(-86.72051185091338, 2.1319722982677265e-14, -337.20486890917147);
         scene.add(neptune)
+        model++
     }
 )
 
@@ -715,7 +723,14 @@ const clock = new THREE.Clock()
 
 //animation per frame
 
+let checker = 0;
+
 const tick = () => {
+    if (model == 8 && checker == 0) {
+        TweenMax.to("#earth", 2.5, { opacity: 1, display: "block" });
+        setTimeout(function () { TweenMax.to("#preloader", 2.5, { opacity: 0, display: "none" }); }, 4000);
+        checker = 1;
+    }
     const elipsed = clock.getElapsedTime()
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
