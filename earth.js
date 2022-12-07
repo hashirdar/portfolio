@@ -38,7 +38,7 @@ loader.load(
     './ASSETS/MODELS/earth.glb',
     (gltf) => {
         earth = gltf.scene;
-        earth.scale.set(0.7, 0.7, 0.7);
+        earth.scale.set(1,1,1);
         earth.position.set(-176.33906187483, 2.0253736833543522e-14, 279.8435596840632)
         scene.add(earth)
         model++
@@ -50,7 +50,7 @@ loader1.load(
     './ASSETS/MODELS/mercury.glb',
     (gltf) => {
         mercury = gltf.scene;
-        mercury.scale.set(13, 13, 13);
+        mercury.scale.set(0.8, 0.8, 0.8);
         mercury.position.set(1734.97, 80, -3000)
         // mercury.position.set(-280, 0, -150)
         scene.add(mercury)
@@ -64,7 +64,7 @@ loader2.load(
     './ASSETS/MODELS/jupiter.glb',
     (gltf) => {
         jupiter = gltf.scene;
-        jupiter.scale.set(31, 31, 31);
+        jupiter.scale.set(1.2,1.2,1.2);
         jupiter.position.set(1734.97, 80, -3000)
         // jupiter.position.set(290.64251966882324, 2.0970767684172966e-14, 181.15886770916433)
         scene.add(jupiter)
@@ -78,7 +78,7 @@ loader3.load(
     './ASSETS/MODELS/uranus.glb',
     (gltf) => {
         uranus = gltf.scene;
-        uranus.scale.set(1.5, 1.5, 1.5);
+        uranus.scale.set(1,1,1);
         uranus.position.set(1734.97, 80, -3000)
         // uranus.position.set(159.62891363424632,1.9241049991866458e-14,-270.66441216779685)
         scene.add(uranus)
@@ -92,7 +92,7 @@ loader4.load(
     './ASSETS/MODELS/mars.glb',
     (gltf) => {
         mars = gltf.scene;
-        mars.scale.set(23, 23, 23);
+        mars.scale.set(1.5,1.5,1.5);
         mars.position.set(357.67697560529547, 80, 221.1165034816064)
         // mars.position.set(78.46440881248945, 2.2441813665976374e-14, 358.0049087824055)
         scene.add(mars)
@@ -107,7 +107,7 @@ loader5.load(
     './ASSETS/MODELS/saturn.glb',
     (gltf) => {
         saturn = gltf.scene;
-        saturn.scale.set(0.9, 0.9, 0.9);
+        saturn.scale.set(48,48,48);
         saturn.position.set(1734.97, 80, -3000)
         // saturn.position.set(333.3806450782728, 2.1319722982677394e-14, -100.42368385461722);
         scene.add(saturn)
@@ -121,7 +121,7 @@ loader6.load(
     './ASSETS/MODELS/venus.glb',
     (gltf) => {
         venus = gltf.scene;
-        venus.scale.set(0.59, 0.59, 0.59);
+        venus.scale.set(0.8,0.8,0.8);
         venus.position.set(-348.4108236994611, 80, -195.4347858944525)
         // venus.position.set(-322.0227683689151, 2.0253736833543563e-14, 75.55937593418506);
         scene.add(venus)
@@ -135,7 +135,7 @@ loader7.load(
     './ASSETS/MODELS/neptune.glb',
     (gltf) => {
         neptune = gltf.scene;
-        neptune.scale.set(6, 6, 6);
+        neptune.scale.set(1.2,1.2,1.2);
         neptune.position.set(1734.97, 80, -3000)
         // neptune.position.set(-86.72051185091338, 2.1319722982677265e-14, -337.20486890917147);
         scene.add(neptune)
