@@ -5,98 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Serif+Oriya:wght@700&display=swap"rel="stylesheet">
-    <link rel="stylesheet" href="./earth.css">
-    <canvas class="webgl"></canvas>
-    <title>Slar System</title>
+    <title>Portfolio</title>
 </head>
 
 <body>
-    <div id="preloader">
-        <span class="blink-me">Welcome</span>
-    </div>
-    <nav class="nav">
-        <div class="mx-auto max-w-full px-2 lg:px-8">
-            <div class="flex h-14 items-center justify-between">
-                <div class="flex items-center justify-center">
-                    <div class="flex">
-                        <img class="mr-1 h-12 sm:mr-3" src="./ASSETS/IMG/logo.png">
-                    </div>
-                    <div class="lg:ml-6">
-                        <div class="flex">
-                            <span class="text-white h-8 rounded-md font-bold text-2xl">Solar System</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-0 items-center">
-                    <div class=" ml-3">
-                        <div class="flex">
-                            <button type="button" class="rounded-full" id="fb" aria-expanded="false"
-                                aria-haspopup="true"
-                                onclick="window.open('https://www.facebook.com/hashir.dar.786','_blank')">
-                                <img class="h-7 hover:h-9 ml-1 rounded-full" src="./ASSETS/IMG/fb.png" alt="">
-                            </button>
-                            <button type="button" class="rounded-full" id="git" aria-expanded="false"
-                                aria-haspopup="true"
-                                onclick="window.open('https://www.instagram.com/hashirdar786/','_blank')">
-                                <img class="h-7 hover:h-9 ml-1 rounded-full" src="./ASSETS/IMG/insta.png" alt="">
-                            </button>
-                            <button type="button" class="rounded-full" id="insta" aria-expanded="false"
-                                aria-haspopup="true" onclick="window.open('https://github.com/hashirdar','_blank')">
-                                <img class="h-7 hover:h-9 ml-1 rounded-full" src="./ASSETS/IMG/git.png" alt="">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <main>
-        <div class="all-content">
-            <div class="content">
-                <div class="planets" id="earth">
-                    <span class="pl-font">EARTH</span>
-                </div>
-                <div class="planets" id="mars">
-                    <span class="pl-font">MARS</span>
-                </div>
-                <div class="planets" id="jupiter">
-                    <span class="pl-font">JUPITER</span>
-                </div>
-                <div class="planets" id="saturn">
-                    <span class="pl-font">SATURN</span>
-                </div>
-                <div class="planets" id="uranus">
-                    <span class="pl-font">URANUS</span>
-                </div>
-                <div class="planets" id="neptune">
-                    <span class="pl-font">NEPTUNE</span>
-                </div>
-                <div class="planets" id="mercury">
-                    <span class="pl-font">MERCURY</span>
-                </div>
-                <div class="planets" id="venus">
-                    <span class="pl-font">VENUS</span>
-                </div>
-            </div>
-            <button id="next" class="arrow"></button>
-            <button id="previous" class="arrow"></button>
-        </div>
-    </main>
-    <container>
-        <div class="description">
-            <div class="pl-dis" id="dis-earth">
-                <p id="ds-font"></p>
-            </div>
-        </div>
-        <div class="sub-main">
-            <button class="button">EXPLORE</button>
-            <button class="b-button">BACK</button>
-        </div>
-    </container>
-    <script type="module" src="earth.js"></script>
+    <button type="button" class="rounded-full" id="fb" aria-expanded="false" aria-haspopup="true"
+        onclick="window.open('https://hashirdar.github.io/portfolio/projects/solar-system/','_blank')">
+    solar-system</button>
+    <button type="button" class="rounded-full" id="git" aria-expanded="false" aria-haspopup="true"
+        onclick="window.open('https://hashirdar.github.io/portfolio/projects/ground-map-build/','_blank')">
+    Map</button>
+    <button type="button" class="rounded-full" id="insta" aria-expanded="false" aria-haspopup="true"
+        onclick="window.open('https://hashirdar.github.io/portfolio/projects/text-markers-sprite/','_blank')">
+    Text-markers</button>
 </body>
 
 </html>

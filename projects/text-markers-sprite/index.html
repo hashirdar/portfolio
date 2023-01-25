@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Serif+Oriya:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./ASSETS/src/style.css">
+    <canvas class="webgl"></canvas>
+    <title>Texture cheking sphere</title>
+</head>
+
+<body>
+    <div id="preloader">
+        <span class="blink-me">Loading</span>
+    </div>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+        varying vec3 vNormal;
+        void main() 
+        {
+            vNormal = normalize( normalMatrix * normal );
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        }
+    </script>
+
+    <!-- fragment shader a.k.a. pixel shader -->
+    <script id="fragmentShader" type="x-shader/x-vertex">
+        varying vec3 vNormal;
+        void main() 
+        {
+            float intensity = pow( 0.7 - dot( vNormal, vec3( 0.0, 0.0, 1.0 ) ), 4.0 ); 
+            gl_FragColor = vec4( 0.012,0.353,0.988, 1.0 ) * intensity;
+        }
+    </script>
+    <script type="module" src="./ASSETS/src/script.js"></script>
+    <script>
+        window.onload = function (e) {
+            setTimeout(function () { TweenMax.to("#preloader", 2.5, { opacity: 0, display: "none" }); }, 1000);
+        }
+    </script>
+</body>
+
+</html>
