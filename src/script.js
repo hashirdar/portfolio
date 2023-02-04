@@ -51,7 +51,3 @@ var swiper = new Swiper('.swiper-container', {
     },
     loop: true,
  });
-
- window.addEventListener('scroll',()=>{
-    console.log(scrollY)
- })
