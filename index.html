@@ -5,19 +5,128 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <canvas id="gradient-canvas"></canvas>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ahom&family=Padyakke+Expanded+One&family=Poppins:ital@1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="icon" type="image/x-icon" href="./Photo.ico">
     <title>Portfolio</title>
 </head>
 
 <body>
-    <button type="button" class="rounded-full" id="fb" aria-expanded="false" aria-haspopup="true"
-        onclick="window.open('./projects/solar-system/','_blank')">
-    solar-system</button>
-    <button type="button" class="rounded-full" id="git" aria-expanded="false" aria-haspopup="true"
-        onclick="window.open('./projects/ground-map-build/','_blank')">
-    Map</button>
-    <button type="button" class="rounded-full" id="insta" aria-expanded="false" aria-haspopup="true"
-        onclick="window.open('./projects/text-markers-sprite/','_blank')">
-    Text-markers</button>
+
+    <div id="progressbar"></div>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#about" class="btn-nav">About</a>
+            <a href="#projects" class="btn-nav">Projects</a>
+            <a href="#contact" class="btn-nav">Contact</a>
+        </div>
+    </nav>
+
+    <div class="Heading">
+        <h1>PORTFOLIO</h1>
+    </div>
+
+    <div id="about" class="card-container">
+        <div class="card">
+            <img src="./assets/Photo.jpg" alt="Profile Picture">
+            <div class="first">
+                <a class="typewrite" data-period="2000" data-type='[ "WebGL Developer", "Web Developer" ]'>
+                    <span class="wrap"></span>
+                </a>
+            </div>
+            <div class="card-content">
+                <h2 class="heading">ABOUT</h2>
+                <p class="para">Hi, I'm Hashir Dar lives in Faisalabad, Pakistan. I'm Web Developer love to make
+                    interactive,
+                    animated
+                    and 3D websites as it looks more interasting and fascinating compared to simple or conventional
+                    websites. </p>
+            </div>
+            <div class="card-button">
+                <span class="btn-card" id="about">ABOUT</span>
+                <span class="btn-card" id="experience">EXPERIENCE</span>
+                <span class="btn-card" id="skills">SKILLS</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" id="slide1" onclick="window.open('./projects/solar-system/','_blank')"
+                    style="background-image:url(./assets/solar-system.jpg)">
+                </div>
+                <div class="swiper-slide" onclick="window.open('./projects/text-markers-sprite/','_blank')"
+                    style="background-image:url(./assets/text-markers.jpg)">
+                </div>
+                <div class="swiper-slide" onclick="window.open('./projects/shoe-product-viewer/','_blank')"
+                    style="background-image:url(./assets/shoe-configurator.jpg)">
+                </div>
+                <div class="swiper-slide" onclick="window.open('https://react-hashir-dar.netlify.app/','_blank')"
+                    style="background-image:url(https://i.postimg.cc/8Ck5BcmS/evgeny-tchebotarev-aiwu-Lj-LPFn-U-unsplash.jpg)">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact-container">
+        <div class="contact-cards">
+            <div class="contact contact-1">
+                <div class="fab fa-facebook">
+                </div>
+                <h2>
+                    Facebook</h2>
+                <a href="#!" onclick="window.open('https://www.facebook.com/hashir.dar.786','_blank')">CONTACT</a>
+            </div>
+            <div class="contact contact-2">
+                <div class="fab fa-github">
+                </div>
+                <h2>
+                    Github</h2>
+                <a href="#!" onclick="window.open('https://github.com/hashirdar','_blank')">CONTACT</a>
+            </div>
+            <div class="contact contact-3">
+                <div class="fab fa-instagram">
+                </div>
+                <h2>
+                    Instagram</h2>
+                <a href="#!" onclick="window.open('https://www.instagram.com/hashirdar786/','_blank')">CONTACT</a>
+            </div>
+            <div class="contact contact-4">
+                <div class="fab fa-whatsapp">
+                </div>
+                <h2>
+                    WhatsApp</h2>
+                <a href="#!" class="number">CONTACT</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/typewriter.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module" src="./src/script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="./src/vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 10,
+            speed: 200
+        });
+
+        let progress = document.getElementById('progressbar');
+        let zeeshan = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function () {
+            let progressHeight = (window.pageYOffset / zeeshan) * 104 + "%";
+            progress.style.height = progressHeight;
+        }
+    </script>
+
 </body>
 
 </html>
